@@ -25,4 +25,8 @@ class LaptopsController extends Controller
         $laptop->save();
         return redirect('/laptops');
     }
+
+    public function edit() {
+        return view('laptops.edit');
+    }
 }
