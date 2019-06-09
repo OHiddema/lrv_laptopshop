@@ -15,6 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/laptops', 'LaptopsController@index');
-Route::get('/laptops/create', 'LaptopsController@create');
-Route::post('/laptops', 'LaptopsController@store');
+// Use resourceful controller
+Route::resource('laptops','LaptopsController');
