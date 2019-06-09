@@ -40,4 +40,9 @@ class LaptopsController extends Controller
         $laptop->save();
         return redirect('/laptops');
     }
+
+    public function destroy($id) {
+        \App\Laptop::find($id)->delete();
+        return redirect('/laptops');
+    }
 }
