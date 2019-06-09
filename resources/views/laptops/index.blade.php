@@ -10,7 +10,11 @@
    <h1>Laptops</h1>
    <ul>
       @foreach ($laptops as $laptop)
-         <li> {{$laptop->name}} </li>
+         <li>
+            <a href="/laptops/{{$laptop->id}}">
+               {{$laptop->name}}
+            </a> 
+         </li>
       @endforeach
    </ul>
 </body>
