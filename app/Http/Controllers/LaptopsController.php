@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Laptop;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 class LaptopsController extends Controller
 {
@@ -26,13 +27,11 @@ class LaptopsController extends Controller
         return redirect('/laptops');
     }
 
-    public function edit($id) {
-        $laptop = \App\Laptop::findOrFail($id);
+    public function edit(Laptop $laptop) {
         return view('laptops.edit', ['laptop'=>$laptop]);
     }
 
-    public function update($id) {
-        $laptop = \App\Laptop::findOrFail($id);
+    public function update(Laptop $laptop) {
         $laptop->brand = request('brand');
         $laptop->name = request('name');
         $laptop->memory = request('memory');
@@ -41,13 +40,12 @@ class LaptopsController extends Controller
         return redirect('/laptops');
     }
 
-    public function destroy($id) {
-        \App\Laptop::findOrFail($id)->delete();
+    public function destroy(Laptop $laptop) {
+        $laptop->delete();
         return redirect('/laptops');
     }
 
-    public function show($id) {
-        $laptop = \App\Laptop::findOrFail($id);
+    public function show(Laptop $laptop) {
         return view('laptops.show', ['laptop'=>$laptop]);
     }
 }
