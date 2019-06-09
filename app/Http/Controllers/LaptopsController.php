@@ -18,12 +18,7 @@ class LaptopsController extends Controller
     }
 
     public function store() {
-        $laptop = New Laptop();
-        $laptop->brand = request('brand');
-        $laptop->name = request('name');
-        $laptop->memory = request('memory');
-        $laptop->price = request('price');
-        $laptop->save();
+        Laptop::create(request(['brand', 'name', 'memory', 'price']));
         return redirect('/laptops');
     }
 
@@ -32,11 +27,7 @@ class LaptopsController extends Controller
     }
 
     public function update(Laptop $laptop) {
-        $laptop->brand = request('brand');
-        $laptop->name = request('name');
-        $laptop->memory = request('memory');
-        $laptop->price = request('price');
-        $laptop->save();
+        $laptop->update(request(['brand', 'name', 'memory', 'price']));
         return redirect('/laptops');
     }
 
