@@ -15,6 +15,16 @@
       Memory: <input type="number" name="memory"><br><br>
       Price: <input type="number" name="price"><br><br>
       <button type="submit">Add new laptop</button>
+
+      @if($errors->any())
+      <div style="background-color:red">
+         <ul>
+            @foreach($errors->all() as $error)
+               <li>{{$error}}</li>
+            @endforeach
+         </ul>
+      </div>
+      @endif
    </form>
 </body>
 </html>
