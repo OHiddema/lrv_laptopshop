@@ -3,8 +3,8 @@
 @section('content')
    <h1>Edit laptop</h1>
    <form method="POST" action="/laptops/{{$laptop->id}}">
-      {{method_field('PATCH')}}
-      {{csrf_field()}}
+      @method('PATCH')
+      @csrf
       Brand: <input type="text" name='brand' value='{{$laptop->brand}}'><br><br>
       Name: <input type="text" name='name' value='{{$laptop->name}}'><br><br>
       Memory: <input type="text" name="memory" value='{{$laptop->memory}}'><br><br>
@@ -13,8 +13,8 @@
    </form>
    <br>
    <form method="POST" action="/laptops/{{$laptop->id}}">
-      {{method_field('DELETE')}}
-      {{csrf_field()}}
+      @method('DELETE')
+      @csrf
       <button type="submit">Delete</button>
    </form>
 @endsection
