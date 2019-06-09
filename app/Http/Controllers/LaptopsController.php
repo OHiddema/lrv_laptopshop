@@ -26,7 +26,18 @@ class LaptopsController extends Controller
         return redirect('/laptops');
     }
 
-    public function edit() {
-        return view('laptops.edit');
+    public function edit($id) {
+        $laptop = \App\Laptop::find($id);
+        return view('laptops.edit', ['laptop'=>$laptop]);
+    }
+
+    public function update($id) {
+        $laptop = \App\Laptop::find($id);
+        $laptop->brand = request('brand');
+        $laptop->name = request('name');
+        $laptop->memory = request('memory');
+        $laptop->price = request('price');
+        $laptop->save();
+        return redirect('/laptops');
     }
 }
