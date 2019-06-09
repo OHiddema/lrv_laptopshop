@@ -47,4 +47,10 @@ class LaptopsController extends Controller
     public function show(Laptop $laptop) {
         return view('laptops.show', ['laptop'=>$laptop]);
     }
+
+    public function alldata() {
+        $laptops = \App\Laptop::all();
+        return view('laptops.alldata', ['laptops'=>$laptops]);
+    }
+
 }

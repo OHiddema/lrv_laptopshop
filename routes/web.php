@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 // Use resourceful controller
 Route::resource('laptops','LaptopsController');
+
+Route::get('/alldata', 'LaptopsController@alldata');
