@@ -18,4 +18,10 @@
          </tr>
       @endforeach
    </table>
+   <br>
+   <form method="GET" action="/filter">
+      Minimal memory: <input type="text" name="minmem" value="0"><br>
+      Maximal price: <input type="text" name="maxprice" value="1000"><br>
+      <button type="submit">Filter</button>
+   </form>
 @endsection
