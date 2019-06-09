@@ -17,5 +17,8 @@
          </li>
       @endforeach
    </ul>
+
+   <br>
+   <a href="/laptops/create">Create new laptop</a>
 </body>
 </html>
