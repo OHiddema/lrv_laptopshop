@@ -7,17 +7,19 @@
       Minimal memory: <input type="number" name="minmem" value="{{$minmem}}" 
       min="4" max="32" step="4" onchange="this.form.submit()"><br>
       Maximal price: <input type="number" name="maxprice" value="{{$maxprice}}" 
-      min="100" max="2000" step="100" onchange="this.form.submit()"><br>
+      min="100" max="1000" step="100" onchange="this.form.submit()"><br>
    </form>
    <br>
    There are {{$count}} laptops matching your criteria.<br><br>
-   <table border = "2">
-      <tr>
-         <th>Brand</th>
-         <th>Name</th>
-         <th>Memory</th>
-         <th>Price</th>
-      </tr>
+   <table class='table table-striped'>
+      <thead class='thead-dark'>
+         <tr>
+            <th>Brand</th>
+            <th>Name</th>
+            <th>Memory</th>
+            <th>Price</th>
+         </tr>
+      </thead>
       @foreach ($laptops as $laptop)
          <tr>
          <td>{{$laptop->brand}}</td>

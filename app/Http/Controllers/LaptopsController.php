@@ -51,7 +51,7 @@ class LaptopsController extends Controller
     public function getfiltereddata() {
         if (empty(request()->all())) {
             $minmem = 4;
-            $maxprice = 2000;    
+            $maxprice = 1000;    
         } else {
             $minmem = request()->minmem;
             $maxprice = request()->maxprice;    
