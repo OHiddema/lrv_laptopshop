@@ -10,6 +10,7 @@
       min="100" max="2000" step="100" onchange="this.form.submit()"><br>
    </form>
    <br>
+   There are {{$count}} laptops matching your criteria.<br><br>
    <table border = "2">
       <tr>
          <th>Brand</th>
