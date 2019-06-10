@@ -5,9 +5,9 @@
    <br>
    <form method="GET" action="/filter">
       Minimal memory: <input type="number" name="minmem" value="{{$minmem}}" 
-      min="4" max="32" step="4"><br>
+      min="4" max="32" step="4" onchange="this.form.submit()"><br>
       Maximal price: <input type="number" name="maxprice" value="{{$maxprice}}" 
-      min="100" max="2000" step="100"><br>
+      min="100" max="2000" step="100" onchange="this.form.submit()"><br>
       <button type="submit">Filter</button>
    </form>
    <br>
