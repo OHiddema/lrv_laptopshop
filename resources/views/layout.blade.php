@@ -7,6 +7,7 @@
    <title>Document</title>
 </head>
 <body>
+   <a href="/">Home</a>
    <div class='container'>
       @yield('content')
    </div>
