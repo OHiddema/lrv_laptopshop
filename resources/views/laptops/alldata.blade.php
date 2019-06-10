@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-   <h1>All data</h1>
+   <h1>Filter laptops on price and memory</h1>
    <table border = "2">
       <tr>
          <th>Brand</th>
@@ -20,8 +20,8 @@
    </table>
    <br>
    <form method="GET" action="/filter">
-      Minimal memory: <input type="text" name="minmem" value="0"><br>
-      Maximal price: <input type="text" name="maxprice" value="1000"><br>
+      Minimal memory: <input type="text" name="minmem" value="{{$minmem}}"><br>
+      Maximal price: <input type="text" name="maxprice" value="{{$maxprice}}"><br>
       <button type="submit">Filter</button>
    </form>
 @endsection

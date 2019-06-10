@@ -49,14 +49,16 @@ class LaptopsController extends Controller
     }
 
     public function alldata() {
-        $laptops = \App\Laptop::all();
-        return view('laptops.alldata', ['laptops'=>$laptops]);
+        $minmem = 4;
+        $maxprice = 2000;
+        $laptops = \App\Laptop::where([['memory','>=', $minmem],['price', '<=', $maxprice]])->get();
+        return view('laptops.alldata', ['maxprice'=>$maxprice, 'minmem'=>$minmem, 'laptops'=>$laptops]);
     }
 
     public function filter() {
         $minmem = request()->minmem;
         $maxprice = request()->maxprice;
         $laptops = \App\Laptop::where([['memory','>=', $minmem],['price', '<=', $maxprice]])->get();
-        return view('laptops.alldata', ['laptops'=>$laptops]);
+        return view('laptops.alldata', ['maxprice'=>$maxprice, 'minmem'=>$minmem, 'laptops'=>$laptops]);
     }
 }
