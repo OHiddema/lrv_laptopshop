@@ -8,7 +8,6 @@
       min="4" max="32" step="4" onchange="this.form.submit()"><br>
       Maximal price: <input type="number" name="maxprice" value="{{$maxprice}}" 
       min="100" max="2000" step="100" onchange="this.form.submit()"><br>
-      <!-- <button type="submit">Filter</button> -->
    </form>
    <br>
    <table border = "2">

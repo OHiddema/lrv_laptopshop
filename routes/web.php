@@ -19,4 +19,3 @@ Route::get('/', function () {
 Route::resource('laptops','LaptopsController');
 
 Route::get('/getfiltereddata', 'LaptopsController@getfiltereddata');
-// Route::get('/filter', 'LaptopsController@filter');
