@@ -8,7 +8,7 @@
       Name: <input type="text" name='name' value='{{old('name')}}'><br><br>
       Memory: <input type="number" name="memory" value='{{old('memory')}}'><br><br>
       Price: <input type="number" name="price" value='{{old('price')}}'><br><br>
-      <button type="submit">Add new laptop</button>
+      <button class="btn btn-primary" type="submit">Add new laptop</button>
 
       @if($errors->any())
       <div style="background-color:red">

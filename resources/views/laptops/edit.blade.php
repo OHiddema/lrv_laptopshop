@@ -9,12 +9,12 @@
       Name: <input type="text" name='name' value='{{$laptop->name}}'><br><br>
       Memory: <input type="text" name="memory" value='{{$laptop->memory}}'><br><br>
       Price: <input type="number" name="price" value='{{$laptop->price}}'><br><br>
-      <button type="submit">Update</button>
+      <button class="btn btn-primary" type="submit">Update</button>
    </form>
    <br>
    <form method="POST" action="/laptops/{{$laptop->id}}">
       @method('DELETE')
       @csrf
-      <button type="submit">Delete</button>
+      <button class="btn btn-primary" type="submit">Delete</button>
    </form>
 @endsection
