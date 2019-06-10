@@ -2,6 +2,15 @@
 
 @section('content')
    <h1>Filter laptops on price and memory</h1>
+   <br>
+   <form method="GET" action="/filter">
+      Minimal memory: <input type="number" name="minmem" value="{{$minmem}}" 
+      min="4" max="32" step="4"><br>
+      Maximal price: <input type="number" name="maxprice" value="{{$maxprice}}" 
+      min="100" max="2000" step="100"><br>
+      <button type="submit">Filter</button>
+   </form>
+   <br>
    <table border = "2">
       <tr>
          <th>Brand</th>
@@ -18,10 +27,4 @@
          </tr>
       @endforeach
    </table>
-   <br>
-   <form method="GET" action="/filter">
-      Minimal memory: <input type="text" name="minmem" value="{{$minmem}}"><br>
-      Maximal price: <input type="text" name="maxprice" value="{{$maxprice}}"><br>
-      <button type="submit">Filter</button>
-   </form>
 @endsection
