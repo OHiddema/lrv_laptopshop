@@ -3,7 +3,7 @@
 @section('content')
    <h1>Filter laptops on price and memory</h1>
    <br>
-   <form method="GET" action="/filter">
+   <form method="GET" action="/getfiltereddata">
       Minimal memory: <input type="number" name="minmem" value="{{$minmem}}" 
       min="4" max="32" step="4" onchange="this.form.submit()"><br>
       Maximal price: <input type="number" name="maxprice" value="{{$maxprice}}" 

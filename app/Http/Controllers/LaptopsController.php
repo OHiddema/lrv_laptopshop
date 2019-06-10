@@ -48,17 +48,22 @@ class LaptopsController extends Controller
         return view('laptops.show', ['laptop'=>$laptop]);
     }
 
-    public function alldata() {
-        $minmem = 4;
-        $maxprice = 2000;
+    public function getfiltereddata() {
+        if (empty(request()->all())) {
+            $minmem = 4;
+            $maxprice = 2000;    
+        } else {
+            $minmem = request()->minmem;
+            $maxprice = request()->maxprice;    
+        }
         $laptops = \App\Laptop::where([['memory','>=', $minmem],['price', '<=', $maxprice]])->get();
         return view('laptops.alldata', ['maxprice'=>$maxprice, 'minmem'=>$minmem, 'laptops'=>$laptops]);
     }
 
-    public function filter() {
-        $minmem = request()->minmem;
-        $maxprice = request()->maxprice;
-        $laptops = \App\Laptop::where([['memory','>=', $minmem],['price', '<=', $maxprice]])->get();
-        return view('laptops.alldata', ['maxprice'=>$maxprice, 'minmem'=>$minmem, 'laptops'=>$laptops]);
-    }
+    // public function filter() {
+    //     $minmem = request()->minmem;
+    //     $maxprice = request()->maxprice;
+    //     $laptops = \App\Laptop::where([['memory','>=', $minmem],['price', '<=', $maxprice]])->get();
+    //     return view('laptops.alldata', ['maxprice'=>$maxprice, 'minmem'=>$minmem, 'laptops'=>$laptops]);
+    // }
 }
