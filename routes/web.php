@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::resource('laptops','LaptopsController');
 
 Route::get('/getfiltereddata', 'LaptopsController@getfiltereddata');
+
+Route::post('/laptops/{laptop}/prices', 'LaptopPricesController@store');

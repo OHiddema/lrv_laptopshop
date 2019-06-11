@@ -18,4 +18,15 @@
       </div>
    @endif
 
+   <!-- BEGIN Add a new price -->
+   <br>
+   <h3>Add a new price</h3>
+   <form method="POST" action="/laptops/{{$laptop->id}}/prices">
+      @csrf
+      Price: <input type="number" name="price"><br>
+      Start date: <input type="date" name="startDate"><br>
+      <button type="submit" class="btn btn-primary">Add price</button>
+   </form>
+   <!-- END Add a new price -->
+
 @endsection
