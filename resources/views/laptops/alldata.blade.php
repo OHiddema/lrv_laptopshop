@@ -11,7 +11,7 @@
    </form>
    <br>
    There are {{$count}} laptops matching your criteria.<br><br>
-   <table class='table table-striped'>
+   <table class='table table-striped table-sm'>
       <thead class='thead-dark'>
          <tr>
             <th>Brand</th>

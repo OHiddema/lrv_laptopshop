@@ -7,7 +7,7 @@
       @csrf
       Brand: <input type="text" name='brand' value='{{$laptop->brand}}'><br><br>
       Name: <input type="text" name='name' value='{{$laptop->name}}'><br><br>
-      Memory: <input type="text" name="memory" value='{{$laptop->memory}}'><br><br>
+      Memory: <input type="number" name="memory" value='{{$laptop->memory}}'><br><br>
       Price: <input type="number" name="price" value='{{$laptop->price}}'><br><br>
       <button class="btn btn-primary" type="submit">Update</button>
    </form>
