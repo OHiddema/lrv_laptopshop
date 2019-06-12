@@ -1,0 +1,1 @@
+(Temporariraly) stopped this repository, because proposed changes (creating a Price model for storing prices of every laptop at different date intervals) is too difficult for me, at this moment.
